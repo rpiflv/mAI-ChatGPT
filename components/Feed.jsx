@@ -33,7 +33,8 @@ function Feed() {
       setPosts(data)
     }
     fecthPosts();
-  }, [])
+  }, []);
+  
   return (
     <section className="feed">
       <form
