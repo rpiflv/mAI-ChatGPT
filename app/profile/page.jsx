@@ -7,10 +7,20 @@ import Profile from "@components/Profile";
 
 import { useRouter } from "next/navigation";
 const MyProfile = () => {
+  
+  const {data: session} = useSession();
 
-    const {data: session} = useSession();
-
-    const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
+  
+  useEffect(() => {
+      const fecthPosts = async () => {
+        const response = await fetch(`/api/users/${session?.user.id}/posts`);
+        const data = await response.json();
+  
+        setPosts(data)
+      }
+      if (session?.user.id) fecthPosts();
+    }, []);
 
     const handleEdit = () => {
     
@@ -20,27 +30,16 @@ const MyProfile = () => {
 
     }
 
-    useEffect(() => {
-        const fecthPosts = async () => {
-          const response = await fetch(`/api/users/${session?.user.id}/posts`)
-          const data = await response.json();
-    
-          setPosts(data)
-        }
-        if (session?.user.id) fecthPosts();
-      }, [])
 
   return (
-
-
     <Profile 
         name="My"
         desc="Welcome to your profile"
-        data={[]}
+        data={posts}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
     />
   )
 }
 
-export default MyProfile
+export default MyProfile;
