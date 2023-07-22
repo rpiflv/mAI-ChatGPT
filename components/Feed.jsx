@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
-const PromptCardList = ({ data, handleTagClick}) => {
+const PromptCardList = ({ data, handleTagClick, searchText}) => {  
+  const filteredData = data.filter(post => post.tag.includes(searchText) || post.prompt.includes(searchText))
   return (
     <div className="mt-16 prompt-layout">
-      {data.map(post => (
+      {filteredData.map(post => (
         <PromptCard 
           key={post._id}
           post={post}
@@ -18,18 +19,16 @@ const PromptCardList = ({ data, handleTagClick}) => {
 }
 
 function Feed() {
-
   const [searchText, setSearchText] = useState('');
   const [posts, setPosts] = useState([]);
   const handleSearchChange = (e) => {
-
+    setSearchText(e.target.value)
   }
 
   useEffect(() => {
     const fecthPosts = async () => {
       const response = await fetch("/api/prompt")
       const data = await response.json();
-
       setPosts(data)
     }
     fecthPosts();
@@ -52,6 +51,7 @@ function Feed() {
       <PromptCardList
         data={posts}
         handleTagClick={() => {}}
+        searchText={searchText}
       />
     </section>
     )
