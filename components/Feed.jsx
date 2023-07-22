@@ -9,11 +9,11 @@ const PromptCardList = ({ data, handleTagClick, setSearchText, searchText}) => {
     <div className="mt-16prompt-layout">
       {filteredData.map(post => (
         <PromptCard 
-          key={post._id}
-          post={post}
-          handleTagClick={handleTagClick}
-          setSearchText={setSearchText}
-          />
+        key={post._id}
+        post={post}
+        handleTagClick={handleTagClick}
+        setSearchText={setSearchText}
+        />
       ))}
     </div>
   )
