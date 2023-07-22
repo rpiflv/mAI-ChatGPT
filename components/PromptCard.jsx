@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
+function PromptCard({post, handleTagClick, handleEdit, handleDelete, setSearchText}) {
 
   const [copied, setCopied] = useState('');
 
@@ -20,7 +20,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
   }
 
   return (
-    <div className="prompt_card">
+    <div className="prompt_card mb-5">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image
