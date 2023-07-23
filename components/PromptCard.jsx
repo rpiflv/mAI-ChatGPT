@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-function PromptCard({post, handleTagClick, handleEdit, handleDelete, setSearchText}) {
+function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
 
   const [copied, setCopied] = useState('');
 
@@ -21,7 +21,9 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete, setSearchTe
 
   return (
     <div className="prompt_card mb-5">
-      <div className="flex justify-between items-start gap-5">
+      <div className="flex justify-between items-start gap-5"
+        onClick={() => router.push(`/profile/${post.creator._id}`)}
+      >
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
           <Image
             alt="userImg"
