@@ -25,10 +25,10 @@ function Nav() {
     <nav className='flex-between w-full mb-16 pt-3'>
       <Link href={"/"} className='flex gap-2 flex-center'>
         <Image 
-        src="/assets/images/logo.svg" 
+        src="/assets/images/logo.png" 
         alt='logo'
-        width={30}
-        height={30}
+        width={43}
+        height={43}
         className='object-contain'
         />
         <p className='logo_text'>mAI-ChatGPT</p>
@@ -46,7 +46,7 @@ function Nav() {
               <Image src={session?.user.image}
               width={37}
               height={37}
-              className='rounded_full'
+              className='rounded_full object-contain'
               alt='profile'>
               </Image>
             </Link>
@@ -72,7 +72,7 @@ function Nav() {
               <Image src={session?.user.image}
               width={37}
               height={37}
-              className='rounded_full'
+              className='rounded_full object-contain'
               alt='profile'
               // onClick={() => setToggleDropdowm(!toggleDropdown)}
               onClick={() => setToggleDropdowm((prev) => !prev)}
