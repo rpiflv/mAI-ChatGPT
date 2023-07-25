@@ -12,7 +12,7 @@ Create and share original prompts for your favourite AI tool.
 </h3>
 
 <p align="center">
-  <a href="https://mai-chatgpt.vercel.app">Visit the deployed app</a>
+  <a href="https://mai-prompt.vercel.app/">Visit the deployed app</a>
 </p>
 </br>
 
