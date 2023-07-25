@@ -14,3 +14,20 @@ Create and share original prompts for your favourite AI tool.
 <p align="center">
   <a href="https://mai-chatgpt.vercel.app">Visit the deployed app</a>
 </p>
+
+<h3>How to open the app</h3>
+<h5>Please follow the below steps to open the app locally:</h5>
+
+1. clone the app 
+  ```sh 
+  git clone https://github.com/rpiflv/mAI-ChatGPT
+  ```
+2. install all the packages
+```sh
+npm install
+```
+3. start the server
+```sh
+npm run dev
+```
+⚠️ if you have a MongoDb error at your first launch, please try to add DNS 8.8.8.8 to your servers.
