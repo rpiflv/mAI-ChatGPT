@@ -3,6 +3,7 @@ import MyList from "@models/myList";
 
 export const POST = async (req, res) => {
     const {userId, listName} = await req.json();
+    console.log(userId, listName)
     try {
         await connectToDB();
         const newList = new MyList({

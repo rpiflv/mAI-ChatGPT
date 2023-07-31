@@ -21,7 +21,7 @@ const CreateList = () => {
             const response = await fetch('/api/list/new', {
                 method: "POST",
                 body: JSON.stringify({
-                    name: listName,
+                    listName: listName,
                     userId: session?.user.id
                 })
             })

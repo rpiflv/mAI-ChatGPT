@@ -1,5 +1,5 @@
 import PromptCard from "./PromptCard";
-
+import Link from "next/link";
 
 function Profile({ name, desc, data, handleDelete, handleEdit }) {
   return (
@@ -16,7 +16,9 @@ function Profile({ name, desc, data, handleDelete, handleEdit }) {
           />
       ))}
     </div>
+    {/* <Link href="/create-list">
     <button>Create a list</button>
+    </Link> */}
     </section>
   )
 }

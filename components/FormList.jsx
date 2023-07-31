@@ -32,7 +32,7 @@ function FormList({type, listName, setListName, submitting, handleSubmit}) {
                   disabled={submitting}
                   className="px-5 py-1.5 bg-primary-orange rounded-full text-white"
                 >
-                  {submitting ? `{type}... ` : type}
+                  {submitting ? `${type}... ` : type}
                 </button>
             </div>
         </form>
