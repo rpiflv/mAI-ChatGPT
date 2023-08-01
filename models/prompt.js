@@ -15,7 +15,8 @@ const PromptSchema = new Schema({
     },
     list: {
         type: Schema.Types.ObjectId,
-        ref: "MyList"
+        ref: "MyList",
+        default: null
     }
 })
 

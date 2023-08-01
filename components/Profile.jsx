@@ -16,9 +16,9 @@ function Profile({ name, desc, data, handleDelete, handleEdit }) {
           />
       ))}
     </div>
-    {/* <Link href="/create-list">
+    <Link href="/create-list">
     <button>Create a list</button>
-    </Link> */}
+    </Link>
     </section>
   )
 }
