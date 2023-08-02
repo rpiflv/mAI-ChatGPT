@@ -11,6 +11,7 @@ const MyProfile = () => {
   const {data: session} = useSession();
 
   const [posts, setPosts] = useState([]);
+  const [lists, setLists] = useState([]);
 
   const router = useRouter();
   
@@ -18,10 +19,18 @@ const MyProfile = () => {
       const fecthPosts = async () => {
         const response = await fetch(`/api/users/${session?.user.id}/posts`);
         const data = await response.json();
-  
         setPosts(data)
       }
       if (session?.user.id) fecthPosts();
+    }, []);
+
+    useEffect(() => {
+      const fecthLists = async () => {
+        const response = await fetch(`/api/users/${session?.user.id}/lists`);
+        const data = await response.json();
+        setLists(data)
+      }
+      if (session?.user.id) fecthLists();
     }, []);
 
     const handleEdit = (post) => {
@@ -47,7 +56,8 @@ const MyProfile = () => {
     <Profile 
         name="My"
         desc="Welcome to your profile"
-        data={posts}
+        posts={posts}
+        lists={lists}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
     />

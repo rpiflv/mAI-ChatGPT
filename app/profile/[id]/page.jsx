@@ -25,7 +25,7 @@ const UserProfile = ({params}) => {
     <Profile 
         name={owner}
         desc={`Welcome to ${owner}'s profile`}
-        data={posts}
+        posts={posts}
     />
   )
 }
