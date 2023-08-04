@@ -38,6 +38,6 @@ GOOGLE_ID=*****
 GOOGLE_CLIENT_SECRET=*****
 MONGODB_URI=*****
 ```
-Please check the below links for more details:
+Please check the below links for more details: </br>
 [Google ID and Secret](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) </br>
 [MongoDB connection](https://www.mongodb.com/docs/guides/atlas/connection-string/)
