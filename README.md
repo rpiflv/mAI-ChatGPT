@@ -32,12 +32,12 @@ yarn dev
 pnpm dev
 ```
 
-Create a .env file in your rot folder and make sure to add the following variables:
+Create a .env file in your root folder and make sure to add the following variables:
 ```bash
 GOOGLE_ID=*****
 GOOGLE_CLIENT_SECRET=*****
 MONGODB_URI=*****
 ```
 Please check the below links for more details:
-[Google ID and Secret](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid)
+[Google ID and Secret](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid) </br>
 [MongoDB connection](https://www.mongodb.com/docs/guides/atlas/connection-string/)
