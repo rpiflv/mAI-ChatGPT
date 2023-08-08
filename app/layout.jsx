@@ -22,9 +22,6 @@ const RootLayout = ({children}) => {
                 <div className='main'>
                     <div className='gradient'/>
                 </div>
-                    {/* <Head>
-                        <link rel="icon" href="../assets/icons/logo16x16.ico" />
-                    </Head> */}
                 <main className='app'>
                     <Nav />
                     {children}
