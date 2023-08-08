@@ -5,9 +5,12 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
+function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleSetShowModal}) {
 
   const [copied, setCopied] = useState('');
+  const [added, setAdded] = useState(false);
+  // const [showModalList, setShowModalList] = useState(false)
+
 
   const {data: session} = useSession();
   const pathName = usePathname();
@@ -17,7 +20,12 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(""), 2000)
+  };
+
+  const handleClickAdd = (promptID) => {
+    router.push(`/add-to-list/${promptID}`)
   }
+
 
   return (
     <div className="prompt_card mb-5">
@@ -70,6 +78,13 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
           >Delete
           </p>
         </div>
+      )}
+      {session?.user.id && pathName === "/" && (
+          <p
+            className="font-inter text-sm lightblue_gradient cursor-pointer mr-5"
+            onClick={() => handleClickAdd && handleClickAdd(post._id)}
+          >Add to list
+          </p>
       )}
     </div>
   )
