@@ -14,9 +14,9 @@ const PromptSchema = new Schema({
         required: [true, "Tag is required"]
     },
     list: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "MyList",
-        default: null
+        default: ""
     }
 })
 
