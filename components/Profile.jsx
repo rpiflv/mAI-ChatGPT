@@ -1,13 +1,13 @@
 import PromptCard from "./PromptCard";
-import Link from "next/link";
 
-function Profile({ name, desc, data, handleDelete, handleEdit }) {
+function Profile({ name, desc, posts, handleDelete, handleEdit }) {
+
   return (
     <section className="w-full">
       <span className="blue_gradient"><h1 className="head_text text-left">{name} Profile</h1></span>
       <p className="desc text-left">{desc}</p>
       <div className="mt-10 prompt-layout">
-      {data.map(post => (
+      {posts?.map(post => (
         <PromptCard 
           key={post._id}
           post={post}
@@ -16,9 +16,6 @@ function Profile({ name, desc, data, handleDelete, handleEdit }) {
           />
       ))}
     </div>
-    <Link href="/create-list">
-    <button>Create a list</button>
-    </Link>
     </section>
   )
 }
