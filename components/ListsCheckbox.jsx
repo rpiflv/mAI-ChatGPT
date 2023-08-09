@@ -11,7 +11,7 @@ function ListsCheckbox ({lists, name, desc, addToList, selectedList, setSelected
             <p className="desc text-left">{name} Lists</p><br/>
             <form onSubmit={addToList}>
                 {lists?.map(list => (
-                        <div class="flex items-center justify-center px-5 mb-3 pl-4 border border-gray-300 rounded-lg max-w-lg hover:bg-gray-300">
+                        <div class="flex items-center justify-center px-5 mb-3 pl-4 border border-blue-300/50 rounded-lg max-w-lg hover:bg-blue-200/50">
                         <input id={list._id} type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                         value={list._id} 
                         checked={selectedList === list._id} 
@@ -20,8 +20,8 @@ function ListsCheckbox ({lists, name, desc, addToList, selectedList, setSelected
                     </div>
                 ))}
                 <button type="submit"
-                 className=" px-5 py-1.5 bg-blue-800 rounded-full text-white hover:cursor-pointer" >
-                    Add</button>
+                 className=" px-5 py-1.5 bg-blue-500 rounded-full text-white hover:cursor-pointer" >
+                    Save</button>
             </form>
         </section>
     )

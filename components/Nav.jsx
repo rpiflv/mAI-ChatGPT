@@ -36,7 +36,7 @@ function Nav() {
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             <Link href="/lists">
-            <button className="px-5 py-1.5 bg-blue-500 rounded-full text-white">My lists</button>
+            <button className="blue_btn">My lists</button>
             </Link>
             <Link href="create-prompt"
             className='black_btn'>Create Post

@@ -75,6 +75,9 @@
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
+.blue_btn {
+  @apply rounded-full border border-blue-500 bg-blue-500 py-2 px-5 text-white transition-all hover:bg-white hover:text-blue-500 text-center text-sm font-inter flex items-center justify-center;
+}
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
@@ -96,7 +99,7 @@
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-blue-500 to-cyan-300 bg-clip-text text-transparent;
 }
 
 .lightblue_gradient {

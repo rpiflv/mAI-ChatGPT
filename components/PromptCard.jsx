@@ -85,7 +85,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
       )}
       {session?.user.id && pathName === "/" && !post.list && (
           <p
-            className="font-inter text-sm border-t border-gray-200 pt-3 lightblue_gradient cursor-pointer mr-5"
+            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 lightblue_gradient cursor-pointer mr-5"
             onClick={() => handleClickAdd && handleClickAdd(post._id)}
           >Add to list
           </p>

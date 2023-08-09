@@ -1,10 +1,11 @@
-import PromptCard from "./PromptCard"
+import PromptCard from "./PromptCard";
+import Link from "next/link";
 
 function Lists({ name, desc, posts, lists}) {
 
   return (
     <section className="w-full">
-      <span className="blue_gradient"><h1 className="head_text text-left">{name} Lists</h1></span>
+      <span className=""><h1 className="blue_gradient head_text text-left">{name} Lists</h1></span>
       <p className="desc text-left">{desc}</p>
       <div className="flex mt-10 flex-col">
         {lists?.map(list => (
@@ -27,6 +28,10 @@ function Lists({ name, desc, posts, lists}) {
           </div>
         ))}
       </div>
+      <Link href="/create-list/" className="text-gray-500 text-sm">
+        <button className="px-5 py-2 bg-blue-500 rounded-full text-white">
+        Create new list</button>
+      </Link>
     </section>
   )
 }
