@@ -33,33 +33,12 @@ const MyLists = () => {
       if (session?.user.id) fecthLists();
     }, []);
 
-    // const handleEdit = (post) => {
-    //   router.push(`/update-prompt?id=${post._id}`)
-    // }
-
-    // const handleDelete = async (post) => {
-    //   const hasConfirmed = confirm("Are you sure to delete?");
-    //   if (hasConfirmed) 
-    //   try {
-    //     await fetch(`/api/prompt/${post._id}`, {
-    //       method: "DELETE"
-    //     });
-    //     const filteredPosts = posts.filter(p => p._id !== post._id);
-    //     setPosts(filteredPosts);
-    //   } catch (error) {
-    //     console.log(error)
-    //   }
-    // }
-
-
   return (
     <Lists 
         name="My"
         desc="Welcome to your lists"
         posts={posts}
         lists={lists}
-        // handleEdit={handleEdit}
-        // handleDelete={handleDelete}
     />
   )
 }
