@@ -5,13 +5,10 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleSetShowModal}) {
+function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
 
   const [copied, setCopied] = useState('');
   const [added, setAdded] = useState(false);
-  // const [showModalList, setShowModalList] = useState(false)
-
-
   const {data: session} = useSession();
   const pathName = usePathname();
   const router = useRouter(); 
@@ -77,11 +74,18 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleSetSh
             onClick={handleDelete}
           >Delete
           </p>
+          {!post.list && (
+            <p
+            className="font-inter text-sm lightblue_gradient cursor-pointer mr-5"
+            onClick={() => handleClickAdd && handleClickAdd(post._id)}
+          >Add to list
+          </p>
+          )}
         </div>
       )}
-      {session?.user.id && pathName === "/" && (
+      {session?.user.id && pathName === "/" && !post.list && (
           <p
-            className="font-inter text-sm lightblue_gradient cursor-pointer mr-5"
+            className="font-inter text-sm border-t border-gray-200 pt-3 lightblue_gradient cursor-pointer mr-5"
             onClick={() => handleClickAdd && handleClickAdd(post._id)}
           >Add to list
           </p>
