@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
 
   const [copied, setCopied] = useState('');
-
+  const [added, setAdded] = useState(false);
   const {data: session} = useSession();
   const pathName = usePathname();
   const router = useRouter(); 
@@ -17,7 +17,12 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(""), 2000)
+  };
+
+  const handleClickAdd = (promptID) => {
+    router.push(`/add-to-list/${promptID}`)
   }
+
 
   return (
     <div className="prompt_card mb-5">
@@ -69,7 +74,21 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
             onClick={handleDelete}
           >Delete
           </p>
+          {!post.list && (
+            <p
+            className="font-inter text-sm lightblue_gradient cursor-pointer mr-5"
+            onClick={() => handleClickAdd && handleClickAdd(post._id)}
+          >Add to list
+          </p>
+          )}
         </div>
+      )}
+      {session?.user.id && pathName === "/" && !post.list && (
+          <p
+            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 lightblue_gradient cursor-pointer mr-5"
+            onClick={() => handleClickAdd && handleClickAdd(post._id)}
+          >Add to list
+          </p>
       )}
     </div>
   )
