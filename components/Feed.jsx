@@ -6,7 +6,7 @@ import PromptCard from "./PromptCard";
 const PromptCardList = ({ data, handleTagClick, setSearchText, searchText}) => {  
   const filteredData = data.filter(post => post.tag.includes(searchText) || post.prompt.includes(searchText))
   return (
-    <div className="mt-16prompt-layout">
+    <div className="mt-16 prompt-layout">
       {filteredData.map(post => (
         <PromptCard 
         key={post._id}
