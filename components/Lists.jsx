@@ -4,17 +4,16 @@ import Link from "next/link";
 function Lists({ name, desc, posts, lists}) {
 
   return (
-    <section className="w-full">
+    <section className="">
       <span className=""><h1 className="blue_gradient head_text text-left">{name} Lists</h1></span>
       <p className="desc text-left">{desc}</p>
-      <div className="flex mt-10 flex-col">
+      <div className=" mt-10 ">
         {lists?.map(list => (
-          <div key={list._id} className="relative w-full flex-row">
-            <span className="list_text mb-10">{list.name}</span> 
-            <div className="columns-1 md:columns-2
-             lg:columns-3 mb-10 mt-5 flex-row">
+          <div key={list._id} className="">
+            <span className="list_text">{list.name}</span> 
+            <div className="prompt-layout">
               {posts.map(post => ( 
-                <div key={post._id} className="mr-5">
+                <div key={post._id} className="">
                   {post.list === list._id && 
                     <PromptCard 
                     key={post._id}
