@@ -1,13 +1,29 @@
 import PromptCard from "./PromptCard";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function Lists({ name, desc, posts, lists}) {
+
+  const router = useRouter();
+  const handleClickRemove = async (promptID) => {
+    try {
+      const response = await fetch(`/api/list/remove/${promptID}`, {
+        method: "PATCH"
+      })
+      if(response.ok) {
+        router.push("/");
+        console.log("I feel refreshed")
+      }
+    } catch(err) {
+      console.log(err)
+      }
+  } 
 
   return (
     <section className="">
       <span className=""><h1 className="blue_gradient head_text text-left">{name} Lists</h1></span>
       <p className="desc text-left">{desc}</p>
-      <div className=" mt-10 ">
+      <div className=" mt-5">
         {lists?.map(list => (
           <div key={list._id} className="">
             <span className="list_text">{list.name}</span> 
@@ -18,6 +34,7 @@ function Lists({ name, desc, posts, lists}) {
                     <PromptCard 
                     key={post._id}
                     post={post}
+                    handleClickRemove={handleClickRemove}
                     />
                   }
                 </div>
