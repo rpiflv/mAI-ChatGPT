@@ -23,10 +23,11 @@ function Lists({ name, desc, posts, lists}) {
     <section className="">
       <span className=""><h1 className="blue_gradient head_text text-left">{name} Lists</h1></span>
       <p className="desc text-left">{desc}</p>
-      <div className=" mt-5">
+      <div className="mt-5">
         {lists?.map(list => (
           <div key={list._id} className="">
             <span className="list_text">{list.name}</span> 
+            <Link href={`/rename-list/${list._id}`}><button>Rename</button></Link>
             <div className="prompt-layout">
               {posts.map(post => ( 
                 <div key={post._id} className="">

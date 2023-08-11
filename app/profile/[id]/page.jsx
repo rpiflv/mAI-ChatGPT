@@ -8,8 +8,6 @@ const UserProfile = ({params}) => {
   
   const [posts, setPosts] = useState([]);
   const [owner, setOwner] = useState('');
-
-  const router = useRouter();
   
   useEffect(() => {
       const fecthPosts = async () => {
