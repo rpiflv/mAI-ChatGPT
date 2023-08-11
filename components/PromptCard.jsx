@@ -5,10 +5,9 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
+function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleClickRemove}) {
 
   const [copied, setCopied] = useState('');
-  const [added, setAdded] = useState(false);
   const {data: session} = useSession();
   const pathName = usePathname();
   const router = useRouter(); 
@@ -22,8 +21,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
   const handleClickAdd = (promptID) => {
     router.push(`/add-to-list/${promptID}`)
   }
-
-
+  
   return (
     <div className="prompt_card mb-5">
       <div className="flex justify-between items-start gap-5"
@@ -88,6 +86,13 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
             className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 lightblue_gradient cursor-pointer mr-5"
             onClick={() => handleClickAdd && handleClickAdd(post._id)}
           >Add to list
+          </p>
+      )}
+      {session?.user.id && pathName === "/lists" && post.list && (
+          <p
+            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 text-gray-400/75 cursor-pointer mr-5"
+            onClick={() => handleClickRemove && handleClickRemove(post._id)}
+          >Remove from list
           </p>
       )}
     </div>

@@ -123,7 +123,7 @@
 }
 
 .prompt-layout {
-  @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
+  @apply mt-5 py-8 sm:columns-2 sm:gap-6 xl:columns-3 xl:gap-2;
 }
 
 /* Feed Component */

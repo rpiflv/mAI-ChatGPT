@@ -12,8 +12,6 @@ const MyLists = () => {
 
   const [posts, setPosts] = useState([]);
   const [lists, setLists] = useState([]);
-
-  const router = useRouter();
   
   useEffect(() => {
       const fecthPosts = async () => {
