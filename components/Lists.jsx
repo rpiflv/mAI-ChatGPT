@@ -52,4 +52,4 @@ function Lists({ name, desc, posts, lists}) {
   )
 }
 
-export default Lists
+export default Lists;

@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 function FormList({type, listName, setListName, submitting, handleSubmit}) {
   return (
@@ -39,4 +39,4 @@ function FormList({type, listName, setListName, submitting, handleSubmit}) {
   )
 }
 
-export default FormList
+export default FormList;

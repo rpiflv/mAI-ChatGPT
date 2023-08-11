@@ -9,12 +9,11 @@ const EditPrompt = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const promptId = searchParams.get('id');
-    
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({
-        prompt: '',
-        tag: ''
-    });
+                                        prompt: '',
+                                        tag: ''
+                                    });
     
         useEffect(() => {
             const getPromptDetails = async () => {
@@ -26,14 +25,12 @@ const EditPrompt = () => {
                 })
             }
             if (promptId) getPromptDetails();
-        }, [promptId])
+        }, [promptId]);
 
     const updatePrompt = async (e) => {
         e.preventDefault();
         setSubmitting(true);
-
         if (!promptId) return alert("Promot ID missing");
-
         try {
             const response = await fetch(`/api/prompt/${promptId}`, {
                 method: "PATCH",
@@ -46,11 +43,12 @@ const EditPrompt = () => {
                 router.push('/')
             }
         } catch(error) {
-            console.log(error)
+            console.log(error);
         } finally {
-            setSubmitting(false)
+            setSubmitting(false);
         }
     }
+
   return (
     <Form
         type="Edit"
@@ -62,4 +60,4 @@ const EditPrompt = () => {
     )
 }
 
-export default EditPrompt
+export default EditPrompt;

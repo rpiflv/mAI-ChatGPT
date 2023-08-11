@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-
-import { useRouter } from "next/navigation";
 import Lists from "@components/Lists";
 
 const MyLists = () => {
@@ -17,7 +15,7 @@ const MyLists = () => {
       const fecthPosts = async () => {
         const response = await fetch("/api/prompt");
         const data = await response.json();
-        setPosts(data)
+        setPosts(data);
       }
       if (session?.user.id) fecthPosts();
     }, []);

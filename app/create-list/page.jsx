@@ -3,14 +3,12 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-
 import FormList from '@components/FormList';
 
 const CreateList = () => {
 
     const router = useRouter();
     const { data: session } = useSession();
-    
     const [submitting, setSubmitting] = useState(false);
     const [listName, setListName] = useState("");
     
@@ -26,12 +24,12 @@ const CreateList = () => {
                 })
             })
             if(response.ok) {
-                router.push('/profile')
+                router.push('/profile');
             }
         } catch(error) {
-            console.log(error)
+            console.log(error);
         } finally {
-            setSubmitting(false)
+            setSubmitting(false);
         }
     }
   return (

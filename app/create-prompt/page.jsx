@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-
 import Form from '@components/Form';
 
 const CreatePrompt = () => {
@@ -30,12 +29,12 @@ const CreatePrompt = () => {
                 })
             })
             if(response.ok) {
-                router.push('/')
+                router.push('/');
             }
         } catch(error) {
-            console.log(error)
+            console.log(error);
         } finally {
-            setSubmitting(false)
+            setSubmitting(false);
         }
     }
   return (

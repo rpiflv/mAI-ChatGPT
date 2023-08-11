@@ -1,5 +1,4 @@
-import Link from "next/link"
-
+import Link from "next/link";
 
 function Form({type, post, setPost, submitting, handleSubmit}) {
   return (
@@ -55,4 +54,4 @@ function Form({type, post, setPost, submitting, handleSubmit}) {
   )
 }
 
-export default Form
+export default Form;

@@ -1,8 +1,6 @@
 import '@styles/global.css';
 import Nav from '@components/Nav';
 import Provider from '@components/Provider';
-import Head from 'next/head';
-
 
 export const metadata = {
     title: "mAIChatGPT",
@@ -11,8 +9,6 @@ export const metadata = {
         icon: '/assets/icons/favicon.ico',
       },
 }
-
-
 
 const RootLayout = ({children}) => {
   return (
@@ -32,4 +28,4 @@ const RootLayout = ({children}) => {
   )
 }
 
-export default RootLayout
+export default RootLayout;

@@ -7,7 +7,6 @@ import {signIn, signOut, useSession} from 'next-auth/react'
 import { getProviders } from 'next-auth/react';
 
 function Nav() {
-
   const {data: session } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdowm] = useState(false);
@@ -76,7 +75,6 @@ function Nav() {
               height={37}
               className='rounded_full object-contain'
               alt='profile'
-              // onClick={() => setToggleDropdowm(!toggleDropdown)}
               onClick={() => setToggleDropdowm((prev) => !prev)}
               />
               {toggleDropdown && (
@@ -126,4 +124,4 @@ function Nav() {
     )
 }
 
-export default Nav
+export default Nav;

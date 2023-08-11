@@ -20,4 +20,4 @@ function Profile({ name, desc, posts, handleDelete, handleEdit }) {
   )
 }
 
-export default Profile
+export default Profile;

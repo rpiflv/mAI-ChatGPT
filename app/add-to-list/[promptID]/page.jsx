@@ -14,13 +14,12 @@ const AddToList = ({params}) => {
   const [selectedList, setSelectedList] = useState("");
 
   const router = useRouter();
-  // const params = useParams();
 
     useEffect(() => {
       const fecthLists = async () => {
         const response = await fetch(`/api/users/${session?.user.id}/lists`);
         const data = await response.json();
-        setLists(data)
+        setLists(data);
       }
       if (session?.user.id) fecthLists();
     }, []);
@@ -40,7 +39,7 @@ const AddToList = ({params}) => {
           }
 
       } catch(err) {
-          console.log(err)
+          console.log(err);
       }
   }
 

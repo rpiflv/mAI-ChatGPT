@@ -99,4 +99,4 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleClick
   )
 }
 
-export default PromptCard
+export default PromptCard;

@@ -15,8 +15,8 @@ const UserProfile = ({params}) => {
       const fecthPosts = async () => {
         const response = await fetch(`/api/users/${params.id}/posts`);
         const data = await response.json();
-        setOwner(data[0].creator.username)
-        setPosts(data)
+        setOwner(data[0].creator.username);
+        setPosts(data);
       }
       if (params.id) fecthPosts();
     }, []);
