@@ -40,9 +40,13 @@ function Lists({ name, desc, posts, lists, setLists, setPosts}) {
       <div className="mt-5">
         {lists?.map(list => (
           <div key={list._id} className="">
-            <span className="list_text">{list.name}</span> 
-            <Link href={`/rename-list/${list._id}`}><button>Rename</button></Link>
-            <button onClick={() => handleListDelete(list._id)}>Delete</button>
+            <div className="border-b flex place-items-baseline">
+              <div className="list_text">{list.name}</div> 
+              <div className="text-gray-400/75 ml-auto">
+                <Link href={`/rename-list/${list._id}`}><button className="mr-5 hover:text-gray-500">Rename</button></Link>
+                <button className="hover:text-gray-500" onClick={() => handleListDelete(list._id)}>Delete</button>
+              </div>
+            </div>
             <div className="prompt-layout">
               {posts.map(post => ( 
                 <div key={post._id} className="">
