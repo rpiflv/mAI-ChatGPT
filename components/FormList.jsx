@@ -22,14 +22,14 @@ function FormList({type, listName, setListName, submitting, handleSubmit}) {
             </input>
           </label>
             <div className="flex-end mx-3 mb-5 gap-4">
-                <Link href="/" className="text-gray-500 text-sm">
-                  <button className="px-5 py-2 bg-gray-300 rounded-full text-white">
+                <Link href="/lists" className="text-gray-500 text-sm">
+                  <button className="px-5 py-2 bg-gray-300 hover:bg-gray-500 rounded-full text-white">
                 Cancel</button>
                 </Link>
                 <button
                 type="submit"
                   disabled={submitting}
-                  className="px-5 py-1.5 bg-primary-orange rounded-full text-white"
+                  className="px-5 py-1.5 bg-blue-400/75 hover:bg-blue-500 rounded-full text-white"
                 >
                   {submitting ? `${type}... ` : type}
                 </button>
