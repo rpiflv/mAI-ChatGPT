@@ -25,15 +25,13 @@ export const PATCH = async (req, { params }) => {
 export const DELETE = async (req, { params }) => {
     try {
         await connectToDB();
-        console.log(params.listID)
         const postsInList = await Prompt.find({list: params.listID}).exec();
-        console.log(postsInList);
         postsInList.map(post => {
             post.list = null;
             post.save();
         }) 
-        // await MyList.findByIdAndRemove(params.listID);
-        // if (!prompt) return new Response("Prompts not found", {status: 404})
+        if (!postsInList) return new Response("Prompts not found", {status: 404});
+        await MyList.findByIdAndRemove(params.listID);
         return new Response("List deleted", {
             status: 200
         })
