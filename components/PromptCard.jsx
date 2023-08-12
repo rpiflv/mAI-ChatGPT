@@ -23,7 +23,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleClick
   }
   
   return (
-    <div className="prompt_card mb-5">
+    <div className="prompt_card mb-5 hover:shadow-md">
       <div className="flex justify-between items-start gap-5"
         onClick={() => router.push(`/profile/${post.creator._id}`)}
       >
@@ -74,25 +74,27 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleClick
           </p>
           {!post.list && (
             <p
-            className="font-inter text-sm lightblue_gradient cursor-pointer mr-5"
+            className="font-inter text-sm cursor-pointer mr-5"
             onClick={() => handleClickAdd && handleClickAdd(post._id)}
-          >Add to list
+          ><span className="lightblue_gradient">
+            Add to list
+            </span>
           </p>
           )}
         </div>
       )}
-      {session?.user.id && pathName === "/" && !post.list && (
+      {(session?.user.id && pathName === "/" && !post.list) || (pathName.startsWith("/profile/"))&& (
           <p
-            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 lightblue_gradient cursor-pointer mr-5"
+            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 cursor-pointer mr-5"
             onClick={() => handleClickAdd && handleClickAdd(post._id)}
-          >Add to list
+          ><span className="lightblue_gradient">Add to list</span>
           </p>
       )}
       {session?.user.id && pathName === "/lists" && post.list && (
           <p
             className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 text-gray-400/75 hover:text-gray-500 cursor-pointer mr-5"
             onClick={() => handleClickRemove && handleClickRemove(post._id)}
-          >Remove from list
+          >Remove
           </p>
       )}
     </div>

@@ -25,8 +25,8 @@ function Nav() {
         <Image 
         src="/assets/images/logoTransp.png" 
         alt='logo'
-        width={43}
-        height={43}
+        width={93}
+        height={93}
         className='object-contain'
         />
         <p className='logo_text'>mAI-ChatGPT</p>
@@ -38,7 +38,7 @@ function Nav() {
             <button className="blue_btn">My lists</button>
             </Link>
             <Link href="create-prompt"
-            className='black_btn'>Create Post
+            className='orange_btn'>Create Post
             </Link>
             <button type='button' onClick={signOut} className='outline_btn'>
               Sign Out

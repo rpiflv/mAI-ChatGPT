@@ -34,8 +34,8 @@ function Lists({ name, desc, posts, lists, setLists, setPosts}) {
   }
 
   return (
-    <section className="">
-      <span className=""><h1 className="blue_gradient head_text text-left">{name} Lists</h1></span>
+    <section className="w-full max-w-full flex-start flex-col">
+      <h1 className="blue_gradient head_text text-left">{name} Lists</h1>
       <p className="desc text-left">{desc}</p>
       <div className="mt-5">
         {lists?.map(list => (
@@ -65,7 +65,7 @@ function Lists({ name, desc, posts, lists, setLists, setPosts}) {
         ))}
       </div>
       <Link href="/create-list/" className="text-gray-500 text-sm">
-        <button className="px-5 py-2 bg-blue-500 rounded-full text-white">
+        <button className="px-5 py-2 border border-blue-500 text-blue-500 hover:text-white hover:bg-blue-500 rounded-full text-white">
         Create new list</button>
       </Link>
     </section>
