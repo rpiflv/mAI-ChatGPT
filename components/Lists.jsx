@@ -1,23 +1,37 @@
+"use client"
+
 import PromptCard from "./PromptCard";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-function Lists({ name, desc, posts, lists}) {
-
+function Lists({ name, desc, posts, lists, setLists, setPosts}) {
   const router = useRouter();
+
   const handleClickRemove = async (promptID) => {
     try {
       const response = await fetch(`/api/list/remove/${promptID}`, {
         method: "PATCH"
       })
       if(response.ok) {
-        router.push("/");
-        console.log("I feel refreshed")
+        const filteredPosts = posts.filter(post => post._id !== promptID);
+        setPosts(filteredPosts);
       }
     } catch(err) {
       console.log(err)
       }
-  } 
+  }
+
+  const handleListDelete = async (listId) => {
+    try {
+      await fetch(`/api/list/${listId}`, {
+        method: "DELETE"
+      })
+      const filteredLists = lists.filter(list => list._id !== listId);
+      setLists(filteredLists);
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   return (
     <section className="">
@@ -28,6 +42,7 @@ function Lists({ name, desc, posts, lists}) {
           <div key={list._id} className="">
             <span className="list_text">{list.name}</span> 
             <Link href={`/rename-list/${list._id}`}><button>Rename</button></Link>
+            <button onClick={() => handleListDelete(list._id)}>Delete</button>
             <div className="prompt-layout">
               {posts.map(post => ( 
                 <div key={post._id} className="">

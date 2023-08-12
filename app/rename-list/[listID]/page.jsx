@@ -17,7 +17,7 @@ const RenameList = ({params}) => {
         e.preventDefault();
         setSubmitting(true);
         try {
-            const response = await fetch(`/api/list/rename/${params.listID}`, {
+            const response = await fetch(`/api/list/${params.listID}`, {
                 method: "PATCH",
                 body: JSON.stringify({
                     listName: listName,
