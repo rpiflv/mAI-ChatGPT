@@ -35,6 +35,8 @@ const MyLists = () => {
         desc="Welcome to your lists"
         posts={posts}
         lists={lists}
+        setLists={setLists}
+        setPosts={setPosts}
     />
   )
 }

@@ -90,7 +90,7 @@ function PromptCard({post, handleTagClick, handleEdit, handleDelete, handleClick
       )}
       {session?.user.id && pathName === "/lists" && post.list && (
           <p
-            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 text-gray-400/75 cursor-pointer mr-5"
+            className="flex justify-end font-inter text-sm border-t border-gray-200 pt-3 text-gray-400/75 hover:text-gray-500 cursor-pointer mr-5"
             onClick={() => handleClickRemove && handleClickRemove(post._id)}
           >Remove from list
           </p>
