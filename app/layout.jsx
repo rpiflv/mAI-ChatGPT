@@ -22,9 +22,8 @@ const RootLayout = ({children}) => {
             <meta name='author' content='Flavio Ripa' />
             <meta name='robots' content='index, follow' />
             <meta name='og:title' content="My prompts" />
-            <meta name='og:description' content="Discover and share AI prompts og" />
+            <meta name='og:description' content="Discover and share AI prompts with your community. Learn new tips and tricks to improve your productivity. Engage with others and expand your knowledge on various topics. Join us now and start your learning journey." /> 
             <meta property='og:image' name="image" content='https://sustpage123333.s3.ap-southeast-2.amazonaws.com/logo.png' />
-'
         </head>
         <body>
             <Provider>
