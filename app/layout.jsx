@@ -17,10 +17,9 @@ const RootLayout = ({children}) => {
         <head>
             <meta charSet='UTF-8' />
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-            {/* <meta name='description' content="content description" /> */}
-            <meta name='keywords' content='content keywords' />
-            <meta name='author' content='Flavio Ripa' />
-            <meta name='robots' content='index, follow' />
+            {/* <meta name='keywords' content='content keywords' /> */}
+            {/* <meta name='author' content='Flavio Ripa' /> */}
+            {/* <meta name='robots' content='index, follow' /> */}
             <meta name='og:title' content="My prompts" />
             <meta name='description' content="Discover and share AI prompts with your community. Learn new tips and tricks to improve your productivity. Engage with others and expand your knowledge on various topics. Join us now and start your learning journey." /> 
             <meta property='og:image' name="image" content='https://sustpage123333.s3.ap-southeast-2.amazonaws.com/logo.png' />
