@@ -5,7 +5,7 @@ import Provider from '@components/Provider';
 export const metadata = {
     title: "mAIChatGPT",
     description: "Discover and Share AI Prompts",
-    image: '/assets/images/logo.png',
+    image: 'https://sustpage123333.s3.ap-southeast-2.amazonaws.com/logo.png',
     icons: {
         icon: '/assets/icons/favicon.ico',
       },
