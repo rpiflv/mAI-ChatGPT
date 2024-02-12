@@ -4,7 +4,8 @@ import Provider from '@components/Provider';
 
 export const metadata = {
     title: "mAIChatGPT",
-    description: "Dciscover and Share AI Prompts",
+    description: "Discover and Share AI Prompts",
+    image: '/assets/images/logo.png',
     icons: {
         icon: '/assets/icons/favicon.ico',
       },
@@ -13,6 +14,15 @@ export const metadata = {
 const RootLayout = ({children}) => {
   return (
     <html lang='en'>
+        <head>
+            <meta charSet='UTF-8' />
+            <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            <meta name='description' content="content description" />
+            <meta name='keywords' content='content keywords' />
+            <meta name='author' content='Flavio Ripa' />
+            <meta name='robots' content='index, follow' />
+            <meta name='og:title' content="My prompts" />
+        </head>
         <body>
             <Provider>
                 <div className='main'>
